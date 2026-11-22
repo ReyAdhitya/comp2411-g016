@@ -1,0 +1,46 @@
+-- ============================================================================
+-- File:        sql/04_indexes.sql
+-- Group:       G016 | Scenario: D01-W03 (Metro District Community Health Centre)
+-- DBMS:        MySQL Community Server 8.4.11 (InnoDB)
+-- Purpose:     Additional composite index supporting FIFO waitlist retrieval
+--              and queue-position computation.
+-- Target Query: queries/Q06.sql (Rules 4 & 8: Upcoming FIFO waitlist promotion
+--               queue ordered by requested_at ASC, booking_id ASC)
+-- ============================================================================
+
+-- Rationale for composite index (status, session_id, requested_at) on Booking:
+-- 1. Supported clauses in Q06:
+--    - Outer query filters WHERE b.status = 'Waitlisted' and orders rows by
+--      session_id ASC, requested_at ASC, booking_id ASC.
+--    - Correlated queue-position subquery filters WHERE b2.session_id = b.session_id
+--      AND b2.status = 'Waitlisted' and compares b2.requested_at (with booking_id
+--      as the Rule 4 deterministic tie-breaker).
+--    - Also aligns with the Rule 8 promotion lookup for a single session
+--      (WHERE session_id = ? AND status = 'Waitlisted' ORDER BY requested_at, booking_id).
+--
+-- 2. Expected benefit (conceptual):
+--    - Leading with status allows InnoDB to seek directly to the 'Waitlisted'
+--      subset of the B+ tree rather than scanning historical 'Completed' and
+--      'Cancelled' bookings, which grow steadily over time.
+--    - Within status = 'Waitlisted', keys are pre-ordered by (session_id,
+--      requested_at), and InnoDB automatically appends the primary key
+--      (booking_id) to secondary index entries. This matches Q06's FIFO tie-break
+--      order and allows the correlated COUNT(*) subquery to be satisfied from
+--      the secondary index without fetching full table rows.
+--
+-- 3. Storage and write-maintenance trade-offs:
+--    - Adds one secondary B+ tree index on Booking (compact fixed-width columns:
+--      ENUM + INT + DATETIME + implicit PK INT).
+--    - Incurs extra maintenance work on every INSERT and DELETE on Booking, as
+--      well as every UPDATE to Booking.status (e.g., Waitlisted -> Confirmed ->
+--      Completed/Cancelled), because modifying the leading key column moves the
+--      entry within the B+ tree.
+--
+-- 4. Existing indexes deliberately NOT duplicated:
+--    - InnoDB already maintains indexes for all PRIMARY KEYs, UNIQUE constraints
+--      (Patient.email, SessionType.type_name), and FOREIGN KEYs
+--      (HealthSession.type_id, Booking.patient_id, Booking.session_id) defined in
+--      sql/01_schema.sql.
+
+CREATE INDEX idx_booking_status_session_req
+    ON Booking (status, session_id, requested_at);
