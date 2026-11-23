@@ -1,0 +1,9 @@
+query_id,script,business_question,techniques,result_file
+Q01,queries/Q01.sql,Q1: Utilization rate of a specific session type,join;group_by;null_handling,evidence/query_results/Q01.csv
+Q02,queries/Q02.sql,Q2: Cross-service patient history on waitlists,join;join3plus;subquery;correlated;exists,evidence/query_results/Q02.csv
+Q03,queries/Q03.sql,Q3: Average waitlist queue length by session type,join;group_by;null_handling;view,evidence/query_results/Q03.csv
+Q04,queries/Q04.sql,Q4: Screening session volume and cancellation patterns,join;group_by;null_handling,evidence/query_results/Q04.csv
+Q05,queries/Q05.sql,Rule 6: Patients holding at least 2 active future bookings,join;join3plus;group_by;having,evidence/query_results/Q05.csv
+Q06,queries/Q06.sql,Rules 4 & 8: Upcoming FIFO waitlist promotion queue,join;join3plus;subquery;correlated,evidence/query_results/Q06.csv
+Q07,queries/Q07.sql,Rule 9: Audit of past sessions with bookings eligible for completion or expired waitlists,join;join3plus;other_nontrivial,evidence/query_results/Q07.csv
+Q08,queries/Q08.sql,Operational lookup: Receptionist contact list handling missing phone numbers,join;join3plus;null_handling,evidence/query_results/Q08.csv
