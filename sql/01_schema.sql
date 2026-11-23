@@ -1,4 +1,3 @@
-use g_16test;
 CREATE TABLE Patient (
     patient_id INT AUTO_INCREMENT,
     first_name VARCHAR(50) NOT NULL,
