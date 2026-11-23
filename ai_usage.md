@@ -26,8 +26,8 @@
 * **Rejected / not used**: AI was asked to write 03_views.sql, the report text and the test scripts outright. This was declined, because Section 8 of the guidance requires the core SQL and report to be the group's own work; AI gave explanations and specifications instead. Testing showed that capacity (Rule 2), active-booking uniqueness and limit (Rules 5–6), FIFO promotion (Rule 8) and the completion timing (Rule 9) are **not** enforced by the schema. The group recorded this as a limitation instead of adding AI-written triggers.
 
 ## 5. Group Verification Method
-* All SQL was re-run by the group on MySQL 8.4.11 (DBeaver) from an empty database. Query outputs and test outcomes were compared against the screenshots and CSVs before submission.
-* [GROUP TO CONFIRM: who re-ran the build and tests, and on what date.]
+* On 23 Nov 2026 the full build (01 → 04), queries Q01–Q08 and all tests were re-run from an empty MySQL 8.4 database. ADHITYA Reysendrya Athaya checked the outputs against the screenshots, the CSVs and evidence/test_cases.csv.
+* The view and seed data were checked by Rey against the Q03 output and the expected results in the report.
 
 ## 6. Other Members' AI Use
 * [TO BE COMPLETED BY EACH MEMBER: state "No AI assistance was used" or list tool, purpose, affected files, what was accepted or rejected, and how it was checked.]
