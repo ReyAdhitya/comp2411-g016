@@ -1,4 +1,3 @@
-USE g_16test;
 
 DELETE FROM Booking;
 DELETE FROM HealthSession;
