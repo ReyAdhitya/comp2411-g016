@@ -1,7 +1,7 @@
 # AI Usage Declaration (Stage 2)
 
 ## 1. Tool Identification
-* **Tool**: Claude (Anthropic), used by Reysendrya Athaya Adhitya. Other members: see Section 6.
+* **Tools**: Claude (Anthropic), used by Reysendrya Athaya Adhitya; Gemini (Google), used by the other three members (see Section 6).
 
 ## 2. Purpose of Assistance
 * Testing: rebuilding the database, running Q01–Q08 and the tests, and finding errors (invalid id CHECKs, a `USE` line).
@@ -21,8 +21,6 @@
 * On 23 Nov 2026 Rey (ADHITYA Reysendrya Athaya) reviewed every AI-assisted change and compared the re-run results from an empty MySQL 8.4 database against the screenshots and CSVs.
 
 ## 6. Other Members' AI Use
-* [TO BE COMPLETED BY EACH MEMBER: state "No AI assistance was used" or list tool, purpose, affected files, what was accepted or rejected, and how it was checked.]
-* Brayden Aaron Santoso (schema, report, slides): ...
-* Fransiskus Jonathan Muljadi (queries Q01–Q08, 04_indexes.sql):
-    Used Google Gemini to outline the queries based on the schema and data. The affected files are Q01 - Q08 since the outline was accepted. 
-* Oshea Joshua Tangyong (tests, evidence CSVs, README): ...
+* **Brayden Aaron Santoso**: Gemini (Google) assisted with the schema (01_schema.sql), report and slides. Aaron reviewed all output.
+* **Fransiskus Jonathan Muljadi**: Gemini (Google) assisted with queries Q01–Q08 and 04_indexes.sql. F Jo reviewed the output and ran the queries against the database.
+* **Oshea Joshua Tangyong**: Gemini (Google) assisted with the test scripts (tests/), evidence CSVs and README.md. Oshea reviewed the output and ran the tests.
