@@ -1,0 +1,3 @@
+booking_id,session_id,type_name,session_end_at,patient_id,first_name,last_name,status,audit_action
+23,1,Cardiometabolic Screening,2026-10-10 11:00:00,9,Man Kit,Tsang,Waitlisted,Expired Waitlist (Excluded from Active Limit)
+21,9,Influenza Vaccination,2026-10-20 11:00:00,8,Hoi Yan,Yip,Confirmed,Mark Completed (Rule 9)

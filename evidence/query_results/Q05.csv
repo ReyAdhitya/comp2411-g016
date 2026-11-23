@@ -1,0 +1,2 @@
+patient_id,first_name,last_name,email,active_future_bookings,confirmed_bookings,waitlisted_bookings
+6,Wing Sze,Ho,wingsze@mail.com,2,2,0

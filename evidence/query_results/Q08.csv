@@ -1,0 +1,12 @@
+booking_id,status,type_name,session_date,start_time,patient_id,first_name,last_name,phone_number,primary_contact,contact_channel,email
+7,Confirmed,Cardiometabolic Screening,2026-11-27,10:00:00,1,Tai Man,Chan,91234567,91234567,Phone or Email,taiman@mail.com
+8,Confirmed,Cardiometabolic Screening,2026-11-27,10:00:00,2,Siu Ling,Wong,92345678,92345678,Phone or Email,siuling@mail.com
+9,Confirmed,Cardiometabolic Screening,2026-11-27,10:00:00,3,Ka Ho,Lee,\N,Email Only,Email,kaho@mail.com
+10,Waitlisted,Cardiometabolic Screening,2026-11-27,10:00:00,4,Mei Yee,Cheung,93456789,93456789,Phone or Email,meiyee@mail.com
+11,Waitlisted,Cardiometabolic Screening,2026-11-27,10:00:00,5,Chi Keung,Lau,94567890,94567890,Phone or Email,chikeung@mail.com
+12,Confirmed,Influenza Vaccination,2026-11-28,15:00:00,6,Wing Sze,Ho,\N,Email Only,Email,wingsze@mail.com
+16,Confirmed,Influenza Vaccination,2026-11-28,15:00:00,8,Hoi Yan,Yip,96789012,96789012,Phone or Email,hoiyan@mail.com
+13,Confirmed,Stretching Class,2026-11-30,18:00:00,6,Wing Sze,Ho,\N,Email Only,Email,wingsze@mail.com
+17,Confirmed,Stretching Class,2026-11-30,18:00:00,9,Man Kit,Tsang,97890123,97890123,Phone or Email,mankit@mail.com
+15,Confirmed,Blood Pressure Screening,2026-12-02,11:00:00,7,Kwok Wai,Ng,95678901,95678901,Phone or Email,kwokwai@mail.com
+18,Confirmed,Blood Pressure Screening,2026-12-02,11:00:00,10,Pui Shan,Leung,98901234,98901234,Phone or Email,puishan@mail.com
