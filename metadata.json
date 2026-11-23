@@ -1,0 +1,17 @@
+{
+  "group_id": "G016",
+  "canvas_group_name": "Group 16, Nov 25, 10:00-10:05, TU103",
+  "scenario_id": "D01-W03",
+  "stage": 2,
+  "team_size": 4,
+  "members": [
+    {"name": "TANGYONG Oshea Joshua", "student_id": "25094805D"},
+    {"name": "MULJADI Fransiskus Jonathan", "student_id": "25090166D"},
+    {"name": "SANTOSO Brayden Aaron", "student_id": "25094119D"},
+    {"name": "ADHITYA Reysendrya Athaya", "student_id": "25105341D"}
+  ],
+  "dbms": "MySQL Community Server",
+  "dbms_version": "8.4.11",
+  "database_name": "comp2411_g016",
+  "approval_reference": null
+}
